@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
-      <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
@@ -18,7 +17,6 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-
     <!-- JavaScript Bundle with Popper -->
 
     <script
@@ -30,153 +28,206 @@
   </head>
   <body>
     <!--Navbar-->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Little Bird Toys</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
-                  >Company Info</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
-              </li>
-              <li class="nav-item signup">
-                <a class="nav-link" href="#">Sign up</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!--Hero image-->
-      <!--Work in Progress-->
-      <section class="hero">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            Little Bird Toys
-          </h1>
-
-          <h2 class="hero-subtitle">
-            <b>Our Story:</b>
-          </h2>
-          <p>
-            Our handcrafted classic, wooden toys are designed to bring out that
-            slowness in your home. From Planes, trains, automobiles and boats,
-            playsets, all of our wooden toys are designed to spark imagination.
-            The going may be a little slower, but oh the things you’ll see along
-            the way!<br />
-            Since 2018, Little Bird Toys has delighted families looking for
-            quality children’s toys. Our collection of heirloom quality products
-            are built to stand the test of time and to be enjoyed from sibling
-            to sibling and generation to generation.
-          </p>
-        </div>
-      </section>
-    </header>
-
     <div class="container-fluid">
-      <h1>
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" id="navbar-image" href="#"
+              >Little Bird Toys</a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <input
+                    type="button"
+                    class="nav-link"
+                    value="Company Info"
+                    id="companyInfo-section"
+                    onClick="document.getElementById('companyInfo').scrollIntoView();"
+                  />
+                </li>
+
+                <li class="nav-item">
+                  <input
+                    type="button"
+                    class="nav-link"
+                    value="Products"
+                    id="product-section"
+                    onClick="document.getElementById('products').scrollIntoView();"
+                  />
+                </li>
+                <li class="nav-item">
+                  <input
+                    type="button"
+                    class="nav-link"
+                    value="Sign Up"
+                    id="signup-section"
+                    onClick="document.getElementById('signUp').scrollIntoView();"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!--Hero image-->
+        <!--Work in Progress-->
+        <section class="hero">
+          <div class="hero-content" id="companyInfo">
+            <h1 class="hero-title">
+              Little Bird Toys
+            </h1>
+
+            <h2 class="hero-subtitle">
+              <b>Our Story:</b>
+            </h2>
+            <p id="intro">
+              Our handcrafted classic, wooden toys are designed to bring out
+              that slowness in your home. From Planes, trains, automobiles and
+              boats, playsets, all of our wooden toys are designed to spark
+              imagination. The going may be a little slower, but oh the things
+              you’ll see along the way!<br />
+              Since 2018, Little Bird Toys has delighted families looking for
+              quality children’s toys. Our collection of heirloom quality
+              products are built to stand the test of time and to be enjoyed
+              from sibling to sibling and generation to generation.
+            </p>
+          </div>
+        </section>
+      </header>
+
+      <h1 id="products">
         Little Bird Toys' Products
       </h1>
       <!--carousel-->
-      <!--Images will be added with javascript-->
-      <div class="slider">
+      <div class="buttons" id="slideshow">
+        <input
+          type="button"
+          id="toyBlock"
+          onclick="showToyBlocks()"
+          value="Block Set"
+        />
+        <input
+          type="button"
+          id="toyAirplane"
+          onclick="showToyAirplanes()"
+          value="Airplane"
+        />
+        <input
+          type="button"
+          id="toyBoat"
+          onclick="showToyBoats()"
+          value="Boat"
+        />
+        <input type="button" id="toyCar" onclick="showToyCars()" value="Car" />
+        <input
+          type="button"
+          id="toyTrain"
+          onclick="showToyTrains()"
+          value="Train"
+        />
+      </div>
+      <!--source: https://css-tricks.com/css-only-carousel/-->
+      <!--images will be added with javascript-->
+      <div class="slider" id="sliderBlock">
         <a href="#slide-1">1</a>
         <a href="#slide-2">2</a>
-        <a href="#slide-3">3</a>
-        <a href="#slide-4">4</a>
-        <a href="#slide-5">5</a>
         <div class="slides">
           <div id="slide-1">
-            <img
-              src="https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?size=626&ext=jpg"
-            />
+            <div id="toyBlock">
+              <img
+                class="slide"
+                id="airplane1"
+                src="https://i.imgur.com/ifBpURT.png"
+              />
+            </div>
           </div>
           <div id="slide-2">
-            <img src="https://c.neh.tw/thumb/f/720/682e6b6996ab4f6fbb82.jpg" />
-          </div>
-          <div id="slide-3">
-            <img src="https://c.neh.tw/thumb/f/720/b98b4ae2970e4bdc96b8.jpg" />
-          </div>
-          <div id="slide-4">
-            <img src="https://c.neh.tw/thumb/f/720/f4a7c07776a747809707.jpg" />
-          </div>
-          <div id="slide-5">
-            <img
-              src="https://i.pinimg.com/736x/12/c4/89/12c4897507a99bf3586852606ecece52.jpg"
-            />
+            <div id="toyBlock">
+              <img
+                class="slide"
+                id="airplane2"
+                src="https://i.imgur.com/fiN4oD5.png"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <main role="main">
-        <div class="contentWrapper">
-          <form action="" method="post" name="signUpForm" id="signUpForm">
-            <fieldset id="signUp">
-              <legend>Sign Up For Text Alerts</legend>
+      <!--Reviews-->
+      <div id="review-section">
+        <p id="reviews">
+          Nice varnish and no smell, no risk of splinters! 5/5 stars -- Customer
+        </p>
+      </div>
+      <!--sign up-->
+      <div id="signUp">
+        <main role="main">
+          <div class="contentWrapper">
+            <form action="" method="post" name="signUpForm" id="signUpForm">
+              <fieldset id="signUp">
+                <legend>Sign Up for Alerts:</legend>
 
-              <label for="nameField">Name:</label>
-              <input
-                id="nameField"
-                name="nameField"
-                type="text"
-                class="textfield"
-                value="First and Last Name"
-                onFocus="clearName();"
-                onBlur="resetName();"
-              />
+                <label for="nameField">Name:</label>
+                <input
+                  id="nameField"
+                  name="nameField"
+                  type="text"
+                  class="textfield"
+                  value="First and Last Name"
+                  onFocus="clearName();"
+                  onBlur="resetName();"
+                />
 
-              <label for="phoneField">Phone:</label>
-              <input
-                id="phoneField"
-                name="phoneField"
-                type="text"
-                class="textfield"
-                value="example: 212-123-1234"
-                onFocus="clearPhone();"
-                onBlur="resetPhone();"
-              />
+                <label for="phoneField">Phone:</label>
+                <input
+                  id="phoneField"
+                  name="phoneField"
+                  type="text"
+                  class="textfield"
+                  value="example: 212-123-1234"
+                  onFocus="clearPhone();"
+                  onBlur="resetPhone();"
+                />
 
-              <label for="emailField">Email:</label>
-              <input
-                id="emailField"
-                name="emailField"
-                type="text"
-                class="textfield"
-                value="jsmith@gmail.com"
-                onFocus="clearEmail();"
-                onBlur="resetEmail();"
-              />
+                <label for="emailField">Email:</label>
+                <input
+                  id="emailField"
+                  name="emailField"
+                  type="text"
+                  class="textfield"
+                  value="jsmith@gmail.com"
+                  onFocus="clearEmail();"
+                  onBlur="resetEmail();"
+                />
 
-              <input
-                id="submit"
-                type="submit"
-                name="submit"
-                value="Sign Me Up!"
-              />
-            </fieldset>
-          </form>
-        </div>
-      </main>
+                <input
+                  id="submit"
+                  type="submit"
+                  name="submit"
+                  value="Sign Me Up!"
+                />
+              </fieldset>
+            </form>
+          </div>
+        </main>
+      </div>
 
       <footer>
         <div class="container">
           <div class="row">
             <div class="col-sm-4">
-              <h1><b>Visit Us</b></h1>
+              <hr />
+              <h1 id="footer-titles"><b>Visit Us</b></h1>
               <br />
               <hr />
               You’re more than a customer to us – you’re a part of our family!
@@ -187,7 +238,8 @@
               and explore – and time for us to get to know each other!
             </div>
             <div class="col-sm-4">
-              <h1><b>Contact Us</b></h1>
+              <hr />
+              <h1 id="footer-titles"><b>Contact Us</b></h1>
               <br />
               <hr />
               <ul>
@@ -208,13 +260,23 @@
                   @LittleBirdToyCo
                 </li>
                 <!--Social Media Icon Attempts-->
-                <li>
-                  <i class="fab fa-facebook-square"></i>
-                </li>
+                <span
+                  ><img class="icon" src="https://i.imgur.com/jG4zPBu.png"
+                /></span>
+                <span
+                  ><img class="icon" src="https://i.imgur.com/z9k3R0K.png"
+                /></span>
+                <span
+                  ><img class="icon" src="https://i.imgur.com/d5W72mA.png"
+                /></span>
+                <span
+                  ><img class="icon" src="https://i.imgur.com/BtNM9GG.png"
+                /></span>
               </ul>
             </div>
             <div class="col-sm-4">
-              <h1><b>Store Hours</b></h1>
+              <hr />
+              <h1 id="footer-titles"><b>Store Hours</b></h1>
               <br />
               <hr />
               <ul>
@@ -233,8 +295,14 @@
               </ul>
             </div>
           </div>
+          <div class="row">
+            <div class="col-xs-12">
+              Source: https://css-tricks.com/css-only-carousel
+            </div>
+          </div>
         </div>
       </footer>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
